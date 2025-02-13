@@ -16,25 +16,29 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: linear-gradient(to right, #000000c0, #000000);
+  background: url("img/clouds_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 0.1em;
 }
 
 #left-div p {
-  color: white;
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
   font-weight: 600;
   font-family: Poppins, sans-serif;
-}
-
-#left-div.dark-mode p {
-  color: black;
+  text-shadow: #000000 2px 2px 2px;
 }
 
 #left-div.dark-mode {
-  background: linear-gradient(to right, #c5c5c5d4, #ffffff);
+  background: url("img/stars_bg.webp");
+}
+
+#left-div.dark-mode p {
+  text-shadow: #fcf2d0 2px 2px 2px;
 }
 
 #right-div {
@@ -66,8 +70,8 @@ main {
 }
 
 #themeIcon {
-  height: 50px;
-  width: 50px;
+  height: 3.5em;
+  width: 3.5em;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 

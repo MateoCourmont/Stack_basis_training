@@ -8,11 +8,11 @@ document.getElementById("themeToggle").addEventListener("click", function() {
     var statusText = document.getElementById("statusText");
 
     if (right.classList.contains("dark-mode")) {
-        themeIcon.src = "img/soleil.png";
+        themeIcon.src = "img/lune.png";
         themeIcon.alt = "Mode Sombre";
         statusText.textContent = "Toggle Light Mode";
     } else {
-        themeIcon.src = "img/lune.png";
+        themeIcon.src = "img/soleil.png";
         themeIcon.alt = "Mode Clair";
         statusText.textContent = "Toggle Dark Mode";
     }
