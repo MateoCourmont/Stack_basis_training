@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "F1_Bold";
+  src: url("assets/fonts/F1_fonts/Formula1-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "F1_Regular";
+  src: url("assets/fonts/F1_fonts/Formula1-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "F1_Wide";
+  src: url("assets/fonts/F1_fonts/Formula1-Wide.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: #000000;
+  user-select: none;
+}
+
+.main {
+  display: flex;
+  gap: 1em;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.left h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: F1_Bold;
+  color: #ffffff;
+}
+
+.left h4 {
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: F1_Regular;
+  color: #ffffff;
+}
+
+.F1-click-image {
+  width: 50%;
+}
+
+.F1-click-image:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.F1-click-image:active {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.upgarde {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  background: #000000;
+  color: #ffffff;
+  padding: 1em;
+  border: #ffffff 4px solid;
+  cursor: pointer;
+}
+
+.left-part,
+.mid-part,
+.right-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 33%;
+  font-family: F1_Regular;
+}
+
+.upgarde-img {
+  width: 20px;
+}
+
+.F1-img {
+  width: 14%;
+}
+
+.next-lvl-info {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: #ff0000;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  font-family: F1_Regular;
+  padding: 0.5em;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.upgarde:hover .next-lvl-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .upgarde {
+    width: 90%;
+  }
+
+  .F1-img {
+    width: 20px;
+  }
+}

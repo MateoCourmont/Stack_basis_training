@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Little clicker game" />
+    <meta
+      name="keywords"
+      content="Cookie, clicker, F1, game, cookie clicker, formula one"
+    />
+    <meta name="author" content="Mateo COURMONT" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>F1 Clicker: Race to Glory</title>
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <div class="left">
+          <h3>Laps: <span class="nb_Laps">500</span></h3>
+          <h4>Laps per second: <span class="nb_LPS">0</span></h4>
+          <img
+            class="F1-click-image"
+            src="assets/img/F1_click.png"
+            alt="clickable zone"
+            onclick="addLap()"
+            draggable="false"
+          />
+        </div>
+        <div class="right">
+          <div class="upgarde" onclick="upgradeBoost()">
+            <div class="left-part">
+              <img
+                src="assets/img/boost.png"
+                alt="magic boost"
+                class="upgarde-img"
+              />
+              <h4>Magic boost</h4>
+            </div>
+            <div class="mid-part">
+              <p>Cost: <span class="boost-cost">15</span></p>
+              <img src="assets/img/F1_click.png" alt="" class="F1-img" />
+            </div>
+            <div class="right-part">
+              <h4>Level: <span class="boost-level">0</span></h4>
+            </div>
+
+            <div class="next-lvl-info">
+              <p>
+                Each boost provides: 0.1 lap
+                <br />
+                per second
+              </p>
+            </div>
+          </div>
+          <div class="upgarde" onclick="upgradeEngine()">
+            <div class="left-part">
+              <img
+                src="assets/img/motor_upgrade.png"
+                alt="better engine"
+                class="upgarde-img"
+              />
+              <h4>Better engine</h4>
+            </div>
+            <div class="mid-part">
+              <p>Cost: <span class="engine-cost">140</span></p>
+              <img src="assets/img/F1_click.png" alt="" class="F1-img" />
+            </div>
+            <div class="right-part">
+              <h4>Level: <span class="engine-level">0</span></h4>
+            </div>
+
+            <div class="next-lvl-info">
+              <p>
+                Each engine upgrade provides: 1 lap
+                <br />
+                per second
+              </p>
+            </div>
+          </div>
+          <div class="upgarde" onclick="upgradePitstop()">
+            <div class="left-part">
+              <img
+                src="assets/img/red-tireswebp.webp"
+                alt="pit stop"
+                class="upgarde-img"
+              />
+              <h4>Pit Stop</h4>
+            </div>
+            <div class="mid-part">
+              <p>Cost: <span class="pitstop-cost">450</span></p>
+              <img src="assets/img/F1_click.png" alt="" class="F1-img" />
+            </div>
+            <div class="right-part">
+              <h4>Level: <span class="pitstop-level">0</span></h4>
+            </div>
+
+            <div class="next-lvl-info">
+              <p>
+                Each pit stop provides: 3 lap
+                <br />
+                per second
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="app.js" defer></script>
+  </body>
+</html>
