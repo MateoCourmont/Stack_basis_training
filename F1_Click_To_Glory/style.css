@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "F1_Bold";
+  src: url("assets/fonts/F1_fonts/Formula1-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "F1_Regular";
+  src: url("assets/fonts/F1_fonts/Formula1-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "F1_Wide";
+  src: url("assets/fonts/F1_fonts/Formula1-Wide.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+  user-select: none;
+  position: relative;
+}
+
+#selection-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  color: #ffffff;
+  font-family: F1_Regular;
+  gap: 3em;
+}
+
+#selection-screen-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+}
+
+.team-button {
+  width: 10vw;
+  height: 18.5vh;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  border: #ffffff solid 3px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.team-button:hover {
+  transform: scale(1.1);
+}
+
+.mclaren {
+  background-image: url("assets/img/MCL_ICO.jpg");
+  background-color: #f58129;
+}
+
+.ferrari {
+  background-image: url("assets/img/SF_ICO.png");
+  background-color: #ff0000;
+  background-size: 110%;
+}
+
+.redbull {
+  background-image: url("assets/img/RB_ICO.png");
+  background-color: #00182c;
+}
+
+.mercedes {
+  background-image: url("assets/img/MERCEDES_ICO.png");
+  background-color: #61cdc0;
+  background-size: 60%;
+}
+
+.aston-martin {
+  background-image: url("assets/img/AM_ICO.png");
+  background-color: #006860;
+  background-size: 108%;
+}
+
+.alpine {
+  background-image: url("assets/img/ALP_ICO.png");
+  background-color: #bf70ac;
+}
+
+.haas {
+  background-image: url("assets/img/HAAS_ICO.png");
+  background-color: #ffffff;
+  background-size: 70%;
+}
+
+.vcarb {
+  background-image: url("assets/img/VCARB_ICO.png");
+  background-color: #1432c6;
+}
+
+.williams {
+  background-image: url("assets/img/WILLIAMS_ICO.webp");
+  background-color: #009bd7;
+  background-size: 70%;
+}
+
+.sauber {
+  background-image: url("assets/img/SAUBER_ICO.webp");
+  background-color: #4ff317;
+  background-size: 120%;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .team-button {
+    width: 13vw;
+    height: 11vh;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation;
+    transition: 0.2s ease-in-out;
+  }
+
+  .team-button:hover {
+    transform: scale(1.05);
+  }
+
+  .team-button:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #selection-screen {
+    font-size: 0.6em;
+  }
+
+  #selection-screen-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-button {
+    width: 36vw;
+    height: 14vh;
+  }
+}
