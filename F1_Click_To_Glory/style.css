@@ -24,11 +24,12 @@ body {
   height: 100vh;
   background: #ffffff;
   user-select: none;
-  position: relative;
+  overflow: hidden;
 }
 
 #selection-screen {
   display: flex;
+  z-index: 1000;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -68,7 +69,7 @@ body {
 }
 
 .mclaren {
-  background-image: url("assets/img/MCL_ICO.jpg");
+  background-image: url("assets/img/MCL_ICO.png");
   background-color: #f58129;
 }
 
@@ -97,7 +98,7 @@ body {
 
 .alpine {
   background-image: url("assets/img/ALP_ICO.png");
-  background-color: #bf70ac;
+  background-color: #bf70add1;
 }
 
 .haas {
@@ -112,15 +113,205 @@ body {
 }
 
 .williams {
-  background-image: url("assets/img/WILLIAMS_ICO.webp");
+  background-image: url("assets/img/WILLIAMS_ICO.png");
   background-color: #009bd7;
   background-size: 70%;
 }
 
 .sauber {
-  background-image: url("assets/img/SAUBER_ICO.webp");
+  background-image: url("assets/img/SAUBER_ICO.png");
   background-color: #4ff317;
   background-size: 120%;
+}
+
+main {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 33%;
+  height: 100%;
+  background-color: #ff0000;
+}
+
+#left-content-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+}
+
+#left-content-header h1 {
+  font-family: F1_Bold;
+  font-size: 1.2em;
+  color: #ffffff;
+  padding: 0.3em 0 0.3em 0;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  width: 80%;
+  border-radius: 20px;
+}
+
+#left-content-header h2 {
+  font-family: F1_Regular;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+#left-content-header h4 {
+  font-family: F1_Regular;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+#clicking-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+}
+
+.click-img {
+  width: 70%;
+  filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.5));
+}
+
+.click-img:hover {
+  cursor: pointer;
+}
+
+.click-img:active {
+  transform: scale(1.05);
+}
+
+#left-content-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ff0000;
+}
+
+#raceboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #212325;
+}
+
+#raceboard-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  background-color: #212325;
+  color: #9d9fa3;
+  font-size: 1.4em;
+  font-family: F1_Bold;
+  vertical-align: middle;
+  position: relative;
+}
+
+#raceboard-header img {
+  width: 20%;
+}
+
+#raceboard-subheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  color: #9d9fa3;
+  font-size: 1em;
+  font-family: F1_Regular;
+  font-style: italic;
+  position: absolute;
+  top: 2.5em;
+}
+
+#current-lap {
+  font-family: F1_Bold;
+  color: #ffffff;
+}
+
+#raceboard-content {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  background-color: #212325;
+  padding-top: 1.6em;
+}
+
+#raceboard-numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 7%;
+  height: 100%;
+  background-color: #0f0f10;
+  color: #68686a;
+  font-size: 0.8em;
+  font-family: F1_Regular;
+  font-style: italic;
+  padding-top: 0.6em;
+}
+
+#raceboard-numbers p {
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#raceboard-drivers {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #212325;
+  padding-top: 0.6em;
+}
+
+.driver {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 28px;
+  color: #ffffff;
+  font-size: 0.8em;
+  font-family: F1_Bold;
+  padding-left: 0.6em;
+  letter-spacing: 0.2mm;
+  gap: 1.5em;
+}
+
+.fake-time {
+  font-family: F1_Regular;
+  font-style: italic;
+  font-size: 0.9em;
 }
 
 @media screen and (max-width: 768px) {
@@ -145,9 +336,37 @@ body {
   .team-button:focus {
     outline: none;
   }
+
+  #left-content-header h1 {
+    font-size: 1em;
+  }
+
+  #left-content-header h2 {
+    font-size: 1em;
+  }
+
+  #left-content-header h4 {
+    font-size: 0.6em;
+  }
+
+  .click-img {
+    width: 70%;
+  }
+
+  #raceboard-header {
+    height: 10%;
+  }
+
+  #raceboard-header img {
+    width: 30%;
+  }
+
+  #raceboard-numbers {
+    width: 16%;
+  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 435px) {
   #selection-screen {
     font-size: 0.6em;
   }
@@ -159,5 +378,47 @@ body {
   .team-button {
     width: 36vw;
     height: 14vh;
+  }
+
+  #left-content-header h1 {
+    font-size: 0.8em;
+  }
+
+  #left-content-header h2 {
+    font-size: 0.8em;
+  }
+
+  #left-content-header h4 {
+    font-size: 0.5em;
+  }
+
+  .click-img {
+    width: 90%;
+  }
+
+  #raceboard-header img {
+    width: 40%;
+  }
+
+  #raceboard-header {
+    font-size: 1em;
+  }
+
+  #raceboard-subheader {
+    font-size: 0.8em;
+    height: 3%;
+  }
+
+  #raceboard-numbers {
+    font-size: 0.3em;
+    width: 20%;
+  }
+
+  #raceboard-drivers {
+    font-size: 0.5em;
+  }
+
+  .driver {
+    gap: 1em;
   }
 }
